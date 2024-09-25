@@ -28,7 +28,7 @@ export class LoginService {
   }
 
   async eliminarLogin(username: string): Promise<any> {
-    const respuesta = await this.loginModel.deleteOne({ username }).exec();
+    const respuesta = await this.loginModel.deleteOne({ Num_identificacion: username }).exec();
     if (respuesta.deletedCount === 1) {
       return respuesta;
     } else {
